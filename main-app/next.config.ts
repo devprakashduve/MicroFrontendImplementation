@@ -1,7 +1,25 @@
 import type { NextConfig } from "next";
+import  withModuleFederation  from '@module-federation/nextjs-mf';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
-export default nextConfig;
+const mfConfig = {
+  name: 'main_app',
+  remotes: {
+    // The key 'header_mfe' matches the remote's name.
+    // The value is the remote's name and the URL to its remoteEntry.js file.
+    header_mfe: 'header_mfe@http://localhost:3001/_next/static/chunks/remoteEntry.js',
+    footer_mfe: 'footer_mfe@http://localhost:3002/_next/static/chunks/remoteEntry.js',
+  },
+  shared: {
+    react: { singleton: true, requiredVersion: false },
+    'react-dom': { singleton: true, requiredVersion: false },
+    'styled-jsx': { singleton: true, requiredVersion: false },
+  },
+};
+
+export default new withModuleFederation(nextConfig,
+  mfConfig);
