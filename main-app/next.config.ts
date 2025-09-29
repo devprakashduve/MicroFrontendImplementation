@@ -9,8 +9,6 @@ const nextConfig: NextConfig = {
 const mfConfig = {
   name: 'main_app',
   remotes: {
-    // The key 'header_mfe' matches the remote's name.
-    // The value is the remote's name and the URL to its remoteEntry.js file.
     header_mfe: 'header_mfe@http://localhost:3001/_next/static/chunks/remoteEntry.js',
     footer_mfe: 'footer_mfe@http://localhost:3002/_next/static/chunks/remoteEntry.js',
   },
@@ -21,5 +19,4 @@ const mfConfig = {
   },
 };
 
-export default new withModuleFederation(nextConfig,
-  mfConfig);
+export default new withModuleFederation({...nextConfig, mfConfig} as any);

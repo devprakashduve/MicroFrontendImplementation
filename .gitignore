@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/node_modules
 /main-app/node_modules
 /footer-mfe/node_modules
 /header-mfe/node_modules

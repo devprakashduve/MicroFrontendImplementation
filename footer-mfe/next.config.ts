@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { withModuleFederation } from '@module-federation/nextjs-mf';
+import  withModuleFederation  from '@module-federation/nextjs-mf';
 
 const nextConfig: NextConfig = {
   // No basePath needed for Module Federation at the component level
@@ -18,4 +18,4 @@ const mfConfig = {
   },
 };
 
-export default withModuleFederation(nextConfig, mfConfig);
+export default new withModuleFederation({ ...nextConfig, mfConfig } as any );
