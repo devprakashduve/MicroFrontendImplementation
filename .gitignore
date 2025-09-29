@@ -28,9 +28,8 @@
 /footer-mfe/out/
 
 # next.js
-/main-app/.next/
-/main-app/out/
-# next.js
+/header-mfe/.next/
+/header-mfe/out/
 /footer-mfe/.next/
 /footer-mfe/out/
 
