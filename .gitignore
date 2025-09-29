@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/node_modules
 /main-app/node_modules
 /footer-mfe/node_modules
 /header-mfe/node_modules
@@ -28,9 +29,8 @@
 /footer-mfe/out/
 
 # next.js
-/main-app/.next/
-/main-app/out/
-# next.js
+/header-mfe/.next/
+/header-mfe/out/
 /footer-mfe/.next/
 /footer-mfe/out/
 
